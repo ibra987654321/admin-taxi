@@ -1,0 +1,1 @@
+export { PassengersListView } from './PassengersListView';
