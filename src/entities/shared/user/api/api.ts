@@ -11,8 +11,8 @@ export const getUser = async () => {
     response = await api.post<any, ApiResponseData<ApiUserData>>(routes.getUserData());
   } catch (error: any) {
     response = error?.response?.data;
-    localStorage.removeItem(import.meta.env.VITE_TOKEN_NAME);
-    localStorage.removeItem(import.meta.env.VITE_TOKEN_TTL);
+    // localStorage.removeItem(import.meta.env.VITE_TOKEN_NAME);
+    // localStorage.removeItem(import.meta.env.VITE_TOKEN_TTL);
   }
 
   return response;

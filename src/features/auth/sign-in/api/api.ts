@@ -1,4 +1,4 @@
-import { ApiResponseData, api } from '~shared/api';
+import { ApiResponseData, api, apiWithAuth } from '~shared/api';
 import { setAsyncTimeout } from '~shared/lib/utils';
 
 import { routes } from './routes';
@@ -8,18 +8,14 @@ export const signIn = async (data: ApiSignInData) => {
   let response;
 
   try {
-    response = await api.post<any, ApiResponseData<ApiSignInResponseData>>(routes.signIn(), {
+    response = await api.post(routes.signIn(), {
       email: data.email,
       password: data.password,
+      twoFactorToken: data.twoFactorToken,
     });
 
-    const tokenType = response.data.tokenType;
-    const tokenRes = response.data.token;
-    const ttl = response.data.authState.exp;
-    const token = `${tokenType} ${tokenRes}`;
-    // LocalStorageCache.set(import.meta.env.VITE_TOKEN_NAME, token, ttl);
-    localStorage.setItem(import.meta.env.VITE_TOKEN_NAME, JSON.stringify(token));
-    localStorage.setItem(import.meta.env.VITE_TOKEN_TTL, JSON.stringify(ttl));
+    localStorage.setItem(import.meta.env.VITE_TOKEN_NAME, JSON.stringify(response.data.token));
+    localStorage.setItem('taxi-token', JSON.stringify(response.data.token));
   } catch (error: any) {
     response = error?.response?.data;
   }

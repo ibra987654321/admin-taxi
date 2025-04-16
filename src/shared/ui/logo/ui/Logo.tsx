@@ -16,8 +16,12 @@ export const Logo = ({ collased = true }) => {
 
   return (
     <div className={wrapperClass}>
-      <img className={styles.logo} src={Logotype} alt="logo" />
-      <h2 className={styles.title}>{t('appName')}</h2>
+      {/*<h2 className={styles.title}>*/}
+      <div className="text-[30px] font-bold text-center w-full">
+        <span>Bas</span>
+        <span className="text-[#ECA20D]">Taxi</span>
+      </div>
+      {/*</h2>*/}
     </div>
   );
 };

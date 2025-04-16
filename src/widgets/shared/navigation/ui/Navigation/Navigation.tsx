@@ -7,6 +7,7 @@ import { RoutesUrls } from '~shared/lib/router';
 import {
   ChatIcon,
   LogoutIcon,
+  MainIcon,
   SN,
   SettingsIcon,
   Sider,
@@ -38,21 +39,29 @@ export const Navigation: FC<NavigationProps> = () => {
 
   const routes: INavTabItem[] = [
     {
-      title: t('cm:routes.employees'),
-      path: RoutesUrls.employees,
+      title: t('cm:routes.main'),
+      path: RoutesUrls.main,
+      icon: <MainIcon />,
+      isTabBar: true,
+      show: [],
+    },
+    {
+      title: 'Пользователи',
+      path: RoutesUrls.users,
       icon: <UsersIcon />,
       isTabBar: true,
-      show: [RoleType.employee, RoleType.organization, RoleType.supervisor],
+      show: [],
     },
-  ];
-
-  const settingsRoutes: INavTabItem[] = [
     {
       title: t('cm:routes.chat'),
       path: RoutesUrls.chatPage,
       icon: <ChatIcon />,
-      isBlank: false,
+      isTabBar: true,
+      show: [],
     },
+  ];
+
+  const settingsRoutes: INavTabItem[] = [
     {
       title: t('cm:routes.settings'),
       path: RoutesUrls.settings,
@@ -76,15 +85,15 @@ export const Navigation: FC<NavigationProps> = () => {
   return (
     <>
       <Sider
-        user={
-          <SiderUser
-            fio={`${user?.s} ${user?.n?.charAt(-0)}. ${user?.p ? user?.p.charAt(0) + '.' : ''}`}
-            role={t(`cm:role.${user?.role}`)}
-            onError={<SN surname={user?.s || ''} name={user?.n || ''} size={18} />}
-          />
-        }
+        // user={
+        //   <SiderUser
+        //     fio={`${user?.s} ${user?.n?.charAt(-0)}. ${user?.p ? user?.p.charAt(0) + '.' : ''}`}
+        //     role={t(`cm:role.${user?.role}`)}
+        //     onError={<SN surname={user?.s || ''} name={user?.n || ''} size={18} />}
+        //   />
+        // }
         routes={routes
-          .filter((x) => x.show?.some((y) => user!.role.includes(y as RoleType)))
+          // .filter((x) => x.show?.some((y) => user!.role.includes(y as RoleType)))
           .map((item) => {
             return (
               <SiderButton
@@ -110,7 +119,7 @@ export const Navigation: FC<NavigationProps> = () => {
             />
           );
         })}
-        collapsed={collapsedAtom}
+        collapsed={!collapsedAtom}
       />
     </>
   );

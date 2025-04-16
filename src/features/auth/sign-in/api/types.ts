@@ -3,6 +3,7 @@ import { User } from '~entities/shared/user';
 export interface ApiSignInData {
   email: string;
   password: string;
+  twoFactorToken: string;
 }
 
 export interface ApiSignInResponseData {

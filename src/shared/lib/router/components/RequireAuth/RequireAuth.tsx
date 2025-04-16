@@ -9,37 +9,40 @@ interface RequireAuthProps {
 }
 
 export const RequireAuth: React.FunctionComponent<RequireAuthProps> = ({ loginPath }) => {
-  const user = useUser();
   const setUser = useSetUser();
   const location = useLocation();
-
   const setSettings = useSetSettings();
 
   const [isUserReady, setUserReady] = useState(false);
+  const [token, setToken] = useState(() => localStorage.getItem('taxi-token'));
 
   useEffect(() => {
-    if (user) {
+    const storedToken = localStorage.getItem('taxi-token');
+
+    if (storedToken) {
+      setToken(storedToken);
+      setUserReady(true);
+    } else {
+      setUser({ authState: null });
       setUserReady(true);
     }
-  }, [user]);
+  }, []);
 
   const isAuth = () => {
-    if (isUserReady) {
-      if (user) {
-        setSettings();
+    if (!isUserReady) {
+      return false;
+    }
 
-        return true;
-      }
+    if (token) {
+      setSettings();
 
-      if (!user) {
-        setUser({ authState: null });
-      }
+      return true;
     }
 
     return false;
   };
 
-  if (!isAuth()) {
+  if (!token) {
     return <Navigate to={loginPath} state={{ from: location }} replace />;
   }
 

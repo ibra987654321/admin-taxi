@@ -39,21 +39,21 @@ export const AppHeader: FC<AppHeaderProps> = () => {
   const TitleHead = () => <p className="text-[18px] text-bold text-primary">{pageTitle}</p>;
 
   return (
-    <Header>
-      {windoWidth > 768 ? (
-        <TitleHead />
-      ) : (
-        <div className="flex justify-between w-full items-center">
-          <div className="flex items-center gap-5">
-            <Logo collased={false} />
-            <TitleHead />
-          </div>
+    <Header className="bg-white">
+      {/*{windoWidth > 768 ? (*/}
+      {/*  <TitleHead />*/}
+      {/*) : (*/}
+      {/*  <div className="flex justify-between w-full items-center">*/}
+      {/*    <div className="flex items-center gap-5">*/}
+      {/*      <Logo collased={false} />*/}
+      {/*      <TitleHead />*/}
+      {/*    </div>*/}
 
-          <div onClick={handleCollapse} className="cursor-pointer flex items-center">
-            <MenuIcon />
-          </div>
-        </div>
-      )}
+      {/*    <div onClick={handleCollapse} className="cursor-pointer flex items-center">*/}
+      {/*      <MenuIcon />*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*)}*/}
     </Header>
   );
 };

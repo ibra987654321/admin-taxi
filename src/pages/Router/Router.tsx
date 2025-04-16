@@ -7,21 +7,13 @@ import { NotFoundPage } from '~pages/shared/not-found';
 import { SettingsPage } from '~pages/shared/settings';
 import { RequireAuth, RoutesUrls } from '~shared/lib/router';
 import { lazyLoader } from '~shared/lib/utils';
-
-const HomePage = lazyLoader(() =>
-  import('~pages/shared/home').then((module) => ({
-    default: module.HomePage,
-  }))
-);
+import { MainPage } from '~pages/shared/main';
+import { UsersPage } from '~pages/shared/users';
 
 const ChatPage = lazyLoader(() =>
   import('~pages/shared/chat-page').then((module) => ({
     default: module.ChatPage,
   }))
-);
-
-const EmployeesPage = lazyLoader(() =>
-  import('~pages/institution/employee').then((module) => ({ default: module.EmployeesPage }))
 );
 
 const routes = [
@@ -30,7 +22,6 @@ const routes = [
     element: <SiteLayout />,
     children: [
       { path: RoutesUrls.login, element: <LoginPage /> },
-      { path: RoutesUrls.chatPage, element: <ChatPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
@@ -41,8 +32,8 @@ const routes = [
       {
         element: <BaseLayout />,
         children: [
-          { path: RoutesUrls.employees, element: <EmployeesPage /> },
-          { path: RoutesUrls.settings, element: <SettingsPage /> },
+          { path: RoutesUrls.main, element: <MainPage /> },
+          { path: RoutesUrls.users, element: <UsersPage /> },
           { path: RoutesUrls.logout, element: <LogoutPage /> },
           { path: RoutesUrls.chatPage, element: <ChatPage /> },
         ],

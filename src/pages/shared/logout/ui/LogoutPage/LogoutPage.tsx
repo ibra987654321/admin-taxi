@@ -14,10 +14,10 @@ export const LogoutPage: React.FC<LogoutPageProps> = () => {
   const setUser = useSetUser();
 
   const handleSignOut: SignOutViewProps['onSignOut'] = useCallback(() => {
-    localStorage.removeItem('image');
+    localStorage.removeItem('taxi-token');
     setUser({ authState: null });
 
-    navigate(RoutesUrls.root, { replace: true });
+    navigate(RoutesUrls.login, { replace: true });
   }, [navigate]);
 
   return <SignOutView onSignOut={handleSignOut} />;

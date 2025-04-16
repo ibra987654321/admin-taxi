@@ -35,7 +35,10 @@ export const requestHandler = (config: ApiRequestConfig) => {
   const tokenTTL = localStorage.getItem(import.meta.env.VITE_TOKEN_TTL);
 
   if (tokenValue && tokenTTL) {
+    console.log('[Error handler]:');
+
     if (new Date(JSON.parse(tokenTTL)) > new Date()) {
+      console.log('[Error handler]:tokenTTL');
       headers.Authorization = JSON.parse(tokenValue);
     }
   }

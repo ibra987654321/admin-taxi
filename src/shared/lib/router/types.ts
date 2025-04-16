@@ -4,7 +4,7 @@ export const RoutesUrls = {
   login: `/${import.meta.env.VITE_BASE}/login`,
   cabinet: `/${import.meta.env.VITE_BASE}/cabinet`,
   main: `/${import.meta.env.VITE_BASE}/cabinet/main`,
-  faculty: `/${import.meta.env.VITE_BASE}/cabinet/faculty`,
+  users: `/${import.meta.env.VITE_BASE}/cabinet/users`,
   direction: `/${import.meta.env.VITE_BASE}/cabinet/direction`,
   specialty: `/${import.meta.env.VITE_BASE}/cabinet/specialty`,
   disciplines: `/${import.meta.env.VITE_BASE}/cabinet/disciplines`,

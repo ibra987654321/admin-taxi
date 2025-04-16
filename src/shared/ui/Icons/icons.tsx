@@ -173,11 +173,14 @@ export const CollapseIcon = () => (
   </svg>
 );
 
-export const HomeIcon = () => (
-  <svg width="19" height="18" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const MainIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
-      d="M1 5.50391H18M4 14.5039H15C16.6569 14.5039 18 13.1608 18 11.5039V3.50391C18 1.84705 16.6569 0.503906 15 0.503906H4C2.34315 0.503906 1 1.84705 1 3.50391V11.5039C1 13.1608 2.34315 14.5039 4 14.5039Z"
-      stroke="#4f679b"
+      d="M19.6585 9.70116L12.6585 3.57616C12.2815 3.24626 11.7185 3.24626 11.3415 3.57616L4.3415 9.70116C4.12448 9.89105 4 10.1654 4 10.4537V19C4 19.5523 4.44772 20 5 20H19C19.5523 20 20 19.5523 20 19V10.4537C20 10.1654 19.8755 9.89105 19.6585 9.70116Z"
+      stroke="#5A607F"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -186,14 +189,14 @@ export const ChatIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M15 10C15 13.3137 12.3137 16 9 16C7.81929 16 6.71824 15.659 5.78998 15.07L3 16L3.92999 13.21C3.34104 12.2818 3 11.1807 3 10C3 6.68629 5.68629 4 9 4C12.3137 4 15 6.68629 15 10Z"
-      stroke="#1E5EFF"
+      stroke="#5A607F"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M9.33789 15.9896C10.1586 18.3254 12.3838 20 15.0001 20C16.1808 20 17.2819 19.659 18.2101 19.07L21.0001 20L20.0701 17.21L20.2122 16.9744C20.7136 16.0977 21.0001 15.0823 21.0001 14C21.0001 10.6863 18.3138 8 15.0001 8L14.7752 8.00414L14.6623 8.01014"
-      stroke="#1E5EFF"
+      stroke="#5A607F"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -217,6 +220,38 @@ export const DriversIcon = () => (
       clipRule="evenodd"
       d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10ZM8.76268 17.9049C8.10388 16.2879 6.22077 11.9069 5 11.5C4.14617 11.2154 2.96833 11.2548 2.112 11.3416C2.68235 14.7196 5.37002 17.3781 8.76268 17.9049ZM2.32945 7.72049C3.31094 4.41274 6.37371 2 10 2C13.6263 2 16.6891 4.41274 17.6706 7.72049C16.0917 7.42464 13.2582 7 10 7C6.74181 7 3.90825 7.42464 2.32945 7.72049ZM17.888 11.3416C17.0317 11.2548 15.8538 11.2154 15 11.5C13.7792 11.9069 11.8961 16.2879 11.2373 17.9049C14.63 17.3781 17.3176 14.7196 17.888 11.3416Z"
       fill="#5A607F"
+    />
+  </svg>
+);
+export const UsersIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M17 16.2275C19.3304 16.7767 21 18.2583 21 19.9999"
+      stroke="#5A607F"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M3 20C3 17.7909 5.68629 16 9 16C12.3137 16 15 17.7909 15 20"
+      stroke="#5A607F"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M15 13C17.2091 13 19 11.2091 19 9C19 6.79086 17.2091 5 15 5"
+      stroke="#5A607F"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9 13C11.2091 13 13 11.2091 13 9C13 6.79086 11.2091 5 9 5C6.79086 5 5 6.79086 5 9C5 11.2091 6.79086 13 9 13Z"
+      stroke="#5A607F"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -1285,24 +1320,6 @@ export const ContactUserIcon = () => (
     <rect width="18" height="18" x="3" y="4" rx="2" />
     <line x1="8" x2="8" y1="2" y2="4" />
     <line x1="16" x2="16" y1="2" y2="4" />
-  </svg>
-);
-
-export const UsersIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="#4f679b"
-    strokeWidth="1"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M18 21a8 8 0 0 0-16 0" />
-    <circle cx="10" cy="8" r="5" />
-    <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
   </svg>
 );
 

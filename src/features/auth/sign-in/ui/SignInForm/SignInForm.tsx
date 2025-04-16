@@ -57,12 +57,12 @@ export const SignInForm: React.FC<SignInFormProps> = ({ onSignIn }) => {
     }
   };
 
-  const handleExternalSignIn = async () => {
-    if (queryToken) {
-      console.log('Token external');
-      await handleSignIn(() => externalSignIn(queryToken), true);
-    }
-  };
+  // const handleExternalSignIn = async () => {
+  //   if (queryToken) {
+  //     console.log('Token external');
+  //     await handleSignIn(() => externalSignIn(queryToken), true);
+  //   }
+  // };
 
   const handleSubmit = async () => {
     await handleSignIn(
@@ -70,14 +70,15 @@ export const SignInForm: React.FC<SignInFormProps> = ({ onSignIn }) => {
         signIn({
           email: form.getFieldValue('email')?.trim(),
           password: form.getFieldValue('password')?.trim(),
+          twoFactorToken: form.getFieldValue('twoFactorToken')?.trim(),
         }),
       false
     );
   };
 
-  useEffect(() => {
-    handleExternalSignIn();
-  }, [queryToken, setSearchParams]);
+  // useEffect(() => {
+  //   handleExternalSignIn();
+  // }, [queryToken, setSearchParams]);
 
   return (
     <div className="grid gap-10">
@@ -88,6 +89,12 @@ export const SignInForm: React.FC<SignInFormProps> = ({ onSignIn }) => {
         </Form.Item>
         <Form.Item rules={[{ required: true, message: t('notify.full') || '' }]} name="password">
           <Input type="password" placeholder={t('auth:form.password') || ''} />
+        </Form.Item>
+        <Form.Item
+          rules={[{ required: true, message: t('notify.full') || '' }]}
+          name="twoFactorToken"
+        >
+          <Input type="number" placeholder="twoFactorToken" />
         </Form.Item>
         <div className="flex flex-col gap-6 items-center mt-8 ">
           {/* <div className="flex justify-center gap-6 ">
