@@ -1,0 +1,1 @@
+export { TariffsListView } from './TariffsListView';

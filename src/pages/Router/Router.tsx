@@ -9,6 +9,7 @@ import { RequireAuth, RoutesUrls } from '~shared/lib/router';
 import { lazyLoader } from '~shared/lib/utils';
 import { MainPage } from '~pages/shared/main';
 import { UsersPage } from '~pages/shared/users';
+import { TariffsPage } from '~pages/shared/tariffs';
 
 const ChatPage = lazyLoader(() =>
   import('~pages/shared/chat-page').then((module) => ({
@@ -36,6 +37,7 @@ const routes = [
           { path: RoutesUrls.users, element: <UsersPage /> },
           { path: RoutesUrls.logout, element: <LogoutPage /> },
           { path: RoutesUrls.chatPage, element: <ChatPage /> },
+          { path: RoutesUrls.tariffs, element: <TariffsPage /> },
         ],
       },
     ],

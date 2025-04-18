@@ -13,6 +13,7 @@ import {
   Sider,
   SiderButton,
   SiderSettingsButton,
+  TariffIcon,
   UsersIcon,
   useWindowInnerWidth,
 } from '~shared/ui';
@@ -49,6 +50,13 @@ export const Navigation: FC<NavigationProps> = () => {
       title: 'Пользователи',
       path: RoutesUrls.users,
       icon: <UsersIcon />,
+      isTabBar: true,
+      show: [],
+    },
+    {
+      title: 'Тарифы',
+      path: RoutesUrls.tariffs,
+      icon: <TariffIcon />,
       isTabBar: true,
       show: [],
     },

@@ -35,13 +35,13 @@ export const SignInForm: React.FC<SignInFormProps> = ({ onSignIn }) => {
   const handleSignIn = async (signInFn: () => Promise<any>, isExternal: boolean) => {
     try {
       setLoading(true);
-      const { data, error, message } = await signInFn();
-
-      if (error && data === false) {
-        throw new Error(message);
-      }
-
-      handleSignInSuccess(data);
+      const response = await signInFn();
+      console.log(response);
+      // if (error && data === false) {
+      //   throw new Error(message);
+      // }
+      //
+      handleSignInSuccess(response);
     } catch (err) {
       console.error('Error during sign in:', err);
       const errorMessage = isExternal

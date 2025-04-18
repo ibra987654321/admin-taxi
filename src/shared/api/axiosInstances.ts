@@ -24,17 +24,17 @@ export const api = axios.create({
   },
 });
 
-// api.interceptors.request.use((config: ApiRequestConfig) => {
-//   const rawToken = localStorage.getItem('taxi-token');
-//   const token = rawToken?.replace(/^"|"$/g, '');
-//   const headers = config.headers || {};
-//
-//   if (token) {
-//     headers.Authorization = `Bearer ${token}`;
-//   }
-//
-//   return config;
-// });
+api.interceptors.request.use((config: ApiRequestConfig) => {
+  const rawToken = localStorage.getItem('taxi-token');
+  const token = rawToken?.replace(/^"|"$/g, '');
+  const headers = config.headers || {};
 
-export const apiRequestInterceptor = api.interceptors.request.use(requestHandler);
-export const apiResponseInterceptor = api.interceptors.response.use(responseHandler, errorHandler);
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
+});
+
+// export const apiRequestInterceptor = api.interceptors.request.use(requestHandler);
+// export const apiResponseInterceptor = api.interceptors.response.use(responseHandler, errorHandler);

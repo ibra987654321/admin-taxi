@@ -1,0 +1,21 @@
+import { FC, useEffect } from 'react';
+
+import { TariffsListView } from '~entities/tariffs/TariffsListView';
+import { useSetTariffsList, useTariffsList } from '~entities/tariffs/TariffsListView/model';
+
+export interface TariffsProps {}
+
+export const Tariffs: FC<TariffsProps> = () => {
+  const tariffsList = useTariffsList();
+  const setTariffsList = useSetTariffsList();
+
+  useEffect(() => {
+    setTariffsList();
+  }, []);
+
+  return (
+    <>
+      <TariffsListView tariffsList={tariffsList} />
+    </>
+  );
+};

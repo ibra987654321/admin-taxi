@@ -16,6 +16,7 @@ export const RoutesUrls = {
   reports: `/${import.meta.env.VITE_BASE}/cabinet/reports`,
   settings: `/${import.meta.env.VITE_BASE}/cabinet/settings`,
   chatPage: `/${import.meta.env.VITE_BASE}/cabinet/chat-page`,
+  tariffs: `/${import.meta.env.VITE_BASE}/cabinet/tariffs`,
   help: `/${import.meta.env.VITE_BASE}/cabinet/help`,
   privacyPolicy: `/${import.meta.env.VITE_BASE}/cabinet/privacyPolicy`,
   manual: `/${import.meta.env.VITE_BASE}/cabinet/manual`,

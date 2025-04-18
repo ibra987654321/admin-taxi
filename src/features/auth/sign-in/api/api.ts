@@ -5,10 +5,10 @@ import { routes } from './routes';
 import { ApiSignInData, ApiSignInResponseData } from './types';
 
 export const signIn = async (data: ApiSignInData) => {
-  let response;
+  let response: any;
 
   try {
-    response = await api.post(routes.signIn(), {
+    response = await apiWithAuth.post(routes.signIn(), {
       email: data.email,
       password: data.password,
       twoFactorToken: data.twoFactorToken,
