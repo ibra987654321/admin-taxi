@@ -1,0 +1,1 @@
+export { RemoveTariff } from './RemoveTariff';
