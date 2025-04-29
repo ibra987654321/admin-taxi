@@ -6,9 +6,9 @@ export const tariffsPagination = atomWithDefault<ISummaryTariffs | null>((_get) 
 
 export const setTariffsList = atom<ITariff[] | null, any, Promise<void>>(
   (get) => get(tariffsList),
-  async (_get, set) => {
-    const response = await getTariffs();
-    set(tariffsList, response.data.tariffs.base['1']);
+  async (_get, set, cityId) => {
+    const response = await getTariffs(cityId);
+    set(tariffsList, response.data.tariffs);
     set(tariffsPagination, response.data.summary);
   }
 );

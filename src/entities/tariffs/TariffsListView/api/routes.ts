@@ -1,3 +1,3 @@
 export const routes = {
-  getTariffs: () => '/admin/tariff/1',
+  getTariffs: (cityId: any) => '/admin/tariff/' + cityId,
 };

@@ -4,11 +4,11 @@ import { ApiResponseTariffsData } from './types';
 
 import { routes } from './routes';
 
-export const getTariffs = (): any => {
+export const getTariffs = (cityId: any): any => {
   let response;
 
   try {
-    response = api.get<any, ApiResponseTariffsData>(routes.getTariffs());
+    response = api.get<any, ApiResponseTariffsData>(routes.getTariffs(cityId));
   } catch (error) {
     response = error;
   }
